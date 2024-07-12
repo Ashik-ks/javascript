@@ -38,17 +38,56 @@ console.log("typeofarr:",typeof arr);
 console.log("lenghtof arr:",arr.length);
 console.log("arr[3]:",arr[3])
 arr[0]=15;
-console.log("arr:",arr)
+console.log("arr:",arr);
 arr.push("last")
-console.log("arr:",arr)
+console.log("arr:",arr);
 arr.unshift("first")
-console.log("arr:",arr)
+console.log("arr:",arr);
 arr.pop();
-console.log("arr:",arr)
+console.log("arr:",arr);
 arr.shift();
-console.log("arr:",arr)
+console.log("arr:",arr);
 // arr.splice(1,3);
 // console.log("arr:",arr)
 arr.splice(3,0,100);
-console.log("arr:",arr)
+console.log("arr:",arr);
 
+let obj= {
+    firstname:'asasas',
+    lastname:'kkk',
+    address:{
+        street:"street",
+        area:"gggggg",
+    },
+    canadian:true,
+    hobbies : ['reading','writing'],
+}
+
+console.log("obj:",obj);
+console.log("firstname:",obj.firstname);
+console.log("address:",obj.address.area)
+
+obj.mark=10;
+
+console.log("mark:",obj.mark);
+
+ let json_obj=JSON.stringify(obj);
+ console.log("nnnnn:",obj)
+ console.log("type:",typeof json_obj);
+
+let parsed_json_obj=JSON.parse(json_obj);
+console.log("asdasjdh:", parsed_json_obj)
+console.log("type:",typeof parsed_json_obj);
+
+
+{
+    let num1=10;
+    let num2=20;
+
+    if(num1 > num2){
+        console.log(`$num1 is greater:`,num1)
+    }
+    else{
+        console.log(`$num2 is greater:`,num2)
+    }
+}
