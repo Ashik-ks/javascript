@@ -6,7 +6,7 @@
 // {
 //     let b=20;
 //     console.log("b",b)
-//     b=25;
+//     b=25;-
 //     console.log("b",b)
 // }
 
@@ -31,6 +31,7 @@ console.log("trimvalueleft:",trimvalueleft);
 console.log("trimvalue string lenght:",trimvalueleft)
 
 
+//array
 
 let arr=[10,20,30,40,50];
 console.log("arr:",arr);
@@ -51,6 +52,9 @@ console.log("arr:",arr);
 // console.log("arr:",arr)
 arr.splice(3,0,100);
 console.log("arr:",arr);
+
+
+//object
 
 let obj= {
     firstname:'asasas',
@@ -80,14 +84,84 @@ console.log("asdasjdh:", parsed_json_obj)
 console.log("type:",typeof parsed_json_obj);
 
 
+//if,else,else if
+
 {
-    let num1=10;
-    let num2=20;
+    let num1=20;
+    let num2=10;
 
     if(num1 > num2){
-        console.log(`$num1 is greater:`,num1)
+        console.log("num1 is greater:",num1)
+    }
+    else if (num1==num2){
+console.log("both are equal:",num1)
     }
     else{
         console.log(`$num2 is greater:`,num2)
     }
 }
+
+//switch
+
+// let day=2;
+// switch(day){
+//     case 1:console.log("day:","sunday");
+//     break;
+//     case 2:console.log("day:","monday");
+//     break;
+//     case 3:console.log("day:","tuesday");
+//     break;
+//     case 4:console.log("day:","wednesday");
+//     break;
+// }
+
+
+{
+    for(let i = 0; i < 10; i++){
+        console.log("hai")
+    }
+
+    let i=0
+    while(i < 10){
+        console.log("hello");
+        i++;
+    }
+
+
+}
+
+
+{
+    let str =" ";
+
+    for(i=0;i<10;i++){
+    for(j=0;j<i;j++){
+    str =str + "*";
+   
+    }
+ str =str + ("\n");
+}
+    console.log(str)
+}
+
+
+//task-1
+{
+    let str ="";
+
+    for(i=0;i<10;i++){
+    for(j=10;j>i;j--){
+    str =str + "*";
+   
+    }
+ str =str + ("\n");
+}
+    console.log(str)
+}
+
+//task-2
+    
+
+
+
+
