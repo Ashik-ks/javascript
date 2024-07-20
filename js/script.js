@@ -144,6 +144,7 @@ console.log("both are equal:",num1)
     console.log(str)
 }
 
+console.log("\n\n\n")
 
 //task-1
 {
@@ -159,9 +160,60 @@ console.log("both are equal:",num1)
     console.log(str)
 }
 
+console.log("\n\n\n")
+
 //task-2
-    
 
+{
+    let str ="";
 
+    for(i=1;i<10;i++){
+    for(j=1;j<=i;j++){
+    str =str + j;
+    }
+ str =str + ("\n");
+}
+    console.log(str)
+}
+
+ console.log("\n\n\n")
+
+//task-3
+
+{
+    let i=1;
+    for(i=1; i<=10;i++){
+        console.log(i)
+    }
+}
+
+//task-4
+
+{
+    let i=1
+    let sum=0
+    for(i=0;i<=10;i++){
+        sum=sum+i;
+    }
+    console.log("sum:",sum)
+}
+
+console.log("\n\n\n")
+
+//task-5
+
+{
+let i=1
+for (i=1;i<=20;i++){
+if(i%2==0){
+    console.log("even:",i)
+}
+}
+
+}
+
+console.log("\n\n\n")
+
+//task-5
 
 
