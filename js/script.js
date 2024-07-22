@@ -216,4 +216,54 @@ console.log("\n\n\n")
 
 //task-5
 
+{
+    let num=2;
+    let count=0;
+    let i=2;
+    for(i=2;i<num;i++){
+        if(num%i==0){
+            count=count+1
+        }
+    }
+    if(count>=1){
+        console.log("Given number is not prime")
+    }else{
+        console.log("Given number is prime")
+    }
 
+}
+
+console.log("\n\n\n\n\n\n\n\n\n")
+
+//task-6
+
+{
+
+
+
+    let str="aeiou";
+    let arr1=[str[1],str[2],str[3],str[4],str[5]];
+    let arr2=["a","e","i","o","u"];
+    let count=0;
+    result=0;
+    if(arr1==arr2){
+        count=count+1
+        console.log("n",count)
+    }else{count==0}
+    console.log("m",count)
+}
+
+
+
+
+
+// let arr=[10,20,30,40,50];
+// console.log("arr:",arr);
+// console.log("typeofarr:",typeof arr);
+// console.log("lenghtof arr:",arr.length);
+// console.log("arr[3]:",arr[3])
+// arr[0]=15;
+// console.log("arr:",arr);
+// arr.push("last")
+// console.log("arr:",arr);
+// arr.unshift("first")
