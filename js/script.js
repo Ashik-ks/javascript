@@ -233,37 +233,73 @@ console.log("\n\n\n")
 
 }
 
-console.log("\n\n\n\n\n\n\n\n\n")
-
-//task-6
-
-{
+console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
 
+//functions
 
-    let str="aeiou";
-    let arr1=[str[1],str[2],str[3],str[4],str[5]];
-    let arr2=["a","e","i","o","u"];
-    let count=0;
-    result=0;
-    if(arr1==arr2){
-        count=count+1
-        console.log("n",count)
-    }else{count==0}
-    console.log("m",count)
+console.log("\n\n")
+
+// 1.named function
+
+function funct1(){
+    console.log("this is from named function");
 }
+funct1()
+
+console.log("\n\n")
+
+// 2.anonymous function
+
+const funct2=function(){
+    console.log("this is from anonymous function");
+}
+funct2();
+
+console.log("\n\n")
+
+// 3.arrow function
+
+const funct3= () =>{
+    console.log("this is from arrow function");
+}
+funct3();
+
+console.log("\n\n")
+
+// 4.function with parameters
+
+function funct4(a,b){
+console.log("a:",a);
+console.log("b:",b);
+}
+funct4(100,200)
+
+console.log("\n\n")
+
+// 5.callback function
+
+function funct5(abc,num){
+    abc()
+    console.log("num:",num)
+}
+funct5(function() {
+    console.log("this is from callback function")}
+    ,10)
+
+console.log("\n\n")
+
+// 5.function with return
+
+function funct6(){
+    console.log("this is from return value function")
+    return 100;
+}
+const value6=funct6()
+console.log("value6:",value6)
+
+console.log("\n\n")
 
 
+//task 1
 
-
-
-// let arr=[10,20,30,40,50];
-// console.log("arr:",arr);
-// console.log("typeofarr:",typeof arr);
-// console.log("lenghtof arr:",arr.length);
-// console.log("arr[3]:",arr[3])
-// arr[0]=15;
-// console.log("arr:",arr);
-// arr.push("last")
-// console.log("arr:",arr);
-// arr.unshift("first")
