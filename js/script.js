@@ -127,6 +127,40 @@ console.log("\n\n\n")
 console.log("\n\n\n")
 
 
+//to reverse a string
+
+{
+    // let name=['s','a','m','s','u','n'];
+    // let rev='';
+    // for(let i=name.length-1; i>=0; i--){
+        
+    //         rev=rev+name[i];
+    //     }
+    
+    // console.log("reverse string is : ",rev); 
+
+    // let name=['a','s','h','i','k'];
+    // let rev=[];
+    // for(let i=name.length-1; i>=0; i--){
+    //     for(let j=0; j<=name.length-1; j++){
+    //         rev[j]=name[i];
+    //     }
+    // }
+    // console.log("reverse string is : ",rev); 
+
+    let str=['ashik'];
+    let arr1 = str.split;
+    let count='';
+    for (i=arr1.length-1;i>=0;i--){
+      count=i;
+    }
+    console.log("string:",count);
+}
+
+
+
+console.log("\n\n\n")
+
 //task 1
 
 function max()
@@ -167,4 +201,11 @@ console.log("\n\n\n")
     for(i=2;i<=num;i++){
         fact=fact*i
     }console.log("factorial of the given string:",fact)
+}
+
+console.log("\n\n\n")
+
+//task4
+{
+
 }

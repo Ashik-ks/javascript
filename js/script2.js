@@ -195,3 +195,37 @@ const value6=funct6()
 console.log("value6:",value6)
 
 console.log("\n\n")
+
+
+console.log("\n\n")
+
+// 5.call by value
+
+{
+    function update(a){
+        a=20;
+        console.log("a inside update function:",a)
+    }
+    let a =10;
+    console.log("a before update function:",a);
+
+    update(a)
+    console.log("a after update function:",a)
+
+
+
+//call by reference
+
+    function updatearr(arr){
+        arr[0]=100;
+        console.log("arr inside update function:",arr)
+    }
+
+    let arr=[1,2,3,4,5,];
+    console.log("arr before update:",arr)
+
+    updatearr(arr)
+        console.log("arr after update function:",arr)
+    
+}
+
