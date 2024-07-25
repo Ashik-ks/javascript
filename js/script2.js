@@ -229,3 +229,59 @@ console.log("\n\n")
     
 }
 
+{
+    function outerfunction() {
+        let outervariable = 'outer function variable';
+        {
+            function innerfunction() {
+                function innerfunction1() {
+                    console.log(":", outervariable)
+                } return innerfunction1
+            } return innerfunction
+        }
+    }
+} let result = outerfunction();
+let result1 = result();
+result1()
+
+console.log("\n\n\n\n")
+
+
+//event handling
+
+{
+    let btn1=document.getElementById('btn');
+    console.log("this is btn");
+
+    btn1.addEventListener('click' ,function(){
+        console.log("buttonclicked...");
+    })
+    btn1.addEventListener('mouseover' ,function(){
+        console.log("mouseover is fired...");
+    })
+    btn1.addEventListener('mouseout' , function () {
+        console.log('mouseout is fired...');
+    })
+    btn1.addEventListener('mouseup',function(){
+        console.log('mouseup');
+    })
+    btn1.addEventListener("mousedown",function(){
+        console.log("mousedown");
+    })
+    btn1.addEventListener("mousemove",function(){
+        console.log("mousemove");
+    })
+
+    let inp=document.getElementById('input');
+    console.log("input type");
+    
+    inp.addEventListener("keydown",function(){
+        console.log("keydown performed");
+    })
+    inp.addEventListener("keyup",function(){
+        console.log("keyup performed");
+    })
+    inp.addEventListener("keypress",function(){
+        console.log("keypressed performed");
+    })
+}
