@@ -249,39 +249,157 @@ console.log("\n\n\n\n")
 
 //event handling
 
-{
-    let btn1=document.getElementById('btn');
-    console.log("this is btn");
+// {
+//     let btn1=document.getElementById('btn');
+//     console.log("this is btn");
 
-    btn1.addEventListener('click' ,function(){
-        console.log("buttonclicked...");
-    })
-    btn1.addEventListener('mouseover' ,function(){
-        console.log("mouseover is fired...");
-    })
-    btn1.addEventListener('mouseout' , function () {
-        console.log('mouseout is fired...');
-    })
-    btn1.addEventListener('mouseup',function(){
-        console.log('mouseup');
-    })
-    btn1.addEventListener("mousedown",function(){
-        console.log("mousedown");
-    })
-    btn1.addEventListener("mousemove",function(){
-        console.log("mousemove");
-    })
+//     btn1.addEventListener('click' ,function(){
+//         console.log("buttonclicked...");
+//     })
+//     btn1.addEventListener('mouseover' ,function(){
+//         console.log("mouseover is fired...");
+//     })
+//     btn1.addEventListener('mouseout' , function () {
+//         console.log('mouseout is fired...');
+//     })
+//     btn1.addEventListener('mouseup',function(){
+//         console.log('mouseup');
+//     })
+//     btn1.addEventListener("mousedown",function(){
+//         console.log("mousedown");
+//     })
+//     btn1.addEventListener("mousemove",function(){
+//         console.log("mousemove");
+//     })
 
-    let inp=document.getElementById('input');
-    console.log("input type");
+//     let inp=document.getElementById('input');
+//     console.log("input type");
     
-    inp.addEventListener("keydown",function(){
-        console.log("keydown performed");
+//     inp.addEventListener("keydown",function(){
+//         console.log("keydown performed");
+//     })
+//     inp.addEventListener("keyup",function(){
+//         console.log("keyup performed");
+//     })
+//     inp.addEventListener("keypress",function(){
+//         console.log("keypressed performed");
+//     })
+// }
+
+console.log("\n\n\n\n")
+
+//spread operator
+
+{
+    let arr = [1, 2, 3, 4, 5];
+    console.log("arr : ", arr);
+
+    let arr1 = [...arr, 6];
+    console.log("arr1 : ", arr1);
+
+    let obj={
+        name : "john",
+       email : "john@gmail.com"
+
+    }
+    console.log("obj : ",obj);
+
+    let obj1={...obj,address:"street",}
+    console.log("obj1:",obj1)
+
+
+console.log("\n\n\n\n")
+
+//Destructuring
+
+
+    
+    let [a,b,c,d,e]=arr;
+    console.log("a:",a);
+    console.log("b:",b);
+    console.log("c:",c);
+    console.log("d:",d);
+    console.log("e:",e);
+
+    let {name,email,address}=obj1;
+    console.log("adress:",address);
+    console.log("email:",email);
+    console.log("name:",name);
+
+    {
+        //nested destructuring
+
+
+        let matrix=[
+            [1,2,3],
+            [4,5,6],
+            [7,8,9],
+        ]
+        console.log("matrix:",matrix)
+
+        let [row1,row2,[g,h,i]]=matrix;
+        console.log("row1 :",row1);
+        console.log("row2 :",row2);
+        console.log("row3 :",h);
+
+        let [a,b,c]=row1;
+        console.log("a : ",a);
+        console.log("b : ",b);
+        console.log("c : ",c);
+
+
+        let obj={
+            name:"jane",
+            email:"jane@gmail.com",
+            address:{
+                street:"street1",
+                houseno : "eight",
+                pincode : "680026"
+            }
+        }
+        let {name,email,address:{street,hoouseno,pincode}}=obj;
+        console.log("pincode : ",pincode)
+    }
+
+}
+console.log("\n\n\n\n")
+
+
+{
+    //array methods
+
+    //foreach
+    let arr=[10,20,30,40,50];
+     
+    arr.forEach(items => {
+        console.log("items:",items)
+    });
+     
+    //find
+    let result=arr.find(items =>{
+       return items > 30
+        
     })
-    inp.addEventListener("keyup",function(){
-        console.log("keyup performed");
-    })
-    inp.addEventListener("keypress",function(){
-        console.log("keypressed performed");
-    })
+    console.log("result: ",result);
+
+    //filter
+    let result1=arr.filter(items =>{
+        return items > 30
+         
+     })
+     console.log("result1: ",result1);
+
+     //map
+     let result2=arr.map(items =>{
+        return items 
+         
+     })
+     console.log("result2: ",result2);
+
+     //reduce
+     let result3=arr.reduce((total,items)=>{
+        return total+items;
+     },0);
+     console.log("total : ",result3)
+
 }
