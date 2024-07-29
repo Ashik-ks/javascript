@@ -148,11 +148,12 @@ console.log("\n\n\n")
     // }
     // console.log("reverse string is : ",rev); 
 
-    let str=['ashik'];
-    let arr1 = str.split;
+    let str='ashik';
+    let arr1 = str.split('');
+    console.log("",arr1)
     let count='';
-    for (i=arr1.length-1;i>=0;i--){
-      count=i;
+    for (let i=arr1.length-1;i>=0;i--){
+      count=count+arr1[i];
     }
     console.log("string:",count);
 }
@@ -206,6 +207,30 @@ console.log("\n\n\n")
 console.log("\n\n\n")
 
 //task4
-{
+// {
 
+// }
+
+console.log("\n\n\n")
+
+//for each task
+
+//print Names in uppercase
+
+{
+    function people1 (){
+        const people = [
+            {name : 'Alice' ,age : 30, city : 'New York'},
+            {name : 'BOB' ,age : 25, city : 'Los Angeles'},
+            {name : 'Charlie' ,age : 35, city : 'Chicago'},
+            {name : 'David' ,age : 30, city : 'New York'},
+            {name : 'Eve' ,age : 25, city : 'Los Angeles'},
+        ]
+        console.log("people:",people);
+    }
+     
+    people .forEach(items => {
+        console.log("people:",people)
+    });
+    
 }
