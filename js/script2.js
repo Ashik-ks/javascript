@@ -403,3 +403,49 @@ console.log("\n\n\n\n")
      console.log("total : ",result3)
 
 }
+
+{
+    //constructors
+
+
+   function person(name,age,mark){
+    this.name = name;
+    this.age = age;
+     this.mark=mark;
+    this.greeting=function(){
+        console.log(`hai my name is ${this.name},my age is ${this.age}`)
+    }
+   }
+   let person1 = new person("john",21,96)
+   console.log("person1 : ",person1);
+   person1.greeting()
+
+   let person2 = new person("jane",20,90)
+   console.log("person2 : ",person2);
+   person2.greeting()
+
+   //updating individual objects
+
+   person1.adrress="address";
+   console.log("person1:",person1);
+
+   person.prototype.getmark=function(){       //added mark using getmark() in obj.
+    console.log(`${this.name},your mark is ${this.mark}`)
+   }
+   person2.getmark();
+   person1.getmark();
+}
+
+{
+   class person{
+    name;
+    age;
+    mark;
+
+    constructor(){
+        this.name=name;
+        this.age=age;
+        this.mark=mark;
+    }
+   }
+}
