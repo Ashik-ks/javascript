@@ -199,7 +199,7 @@ console.log("\n\n")
 
 console.log("\n\n")
 
-// 5.call by value
+// call by value
 
 {
     function update(a){
@@ -228,7 +228,7 @@ console.log("\n\n")
         console.log("arr after update function:",arr)
     
 }
-
+    //closure
 {
     function outerfunction() {
         let outervariable = 'outer function variable';
@@ -404,6 +404,52 @@ console.log("\n\n\n\n")
 
 }
 
+console.log("\n\n\n\n\n\n")
+
+
+//this keyword
+
+{
+    let obj = {
+        name : "john",
+        email : "john@gmail.com",
+        age : 20,
+        printage : function(){
+            console.log("function execution started");
+            console.log("this : ",this);
+            console.log("age : ",this.age);
+            return "function execution completed";
+        }
+    }
+    console.log("name:",obj.name);
+    console.log("name:",obj.email);
+    console.log("name:",obj.age);
+    console.log("obj.printage():",obj.printage());
+
+
+
+    function greet(message1,message2){
+    console.log("message1 : ",message1);
+    console.log("message2 : ",message2);
+    console.log("this : ",this)
+    console.log("name : ",this.name)
+
+    }
+    greet ("hello","hai");
+
+
+    greet.call(obj,"hello","hai");
+
+
+    greet.apply(obj,["hello","hai"]);
+
+
+    let output= greet.bind(obj,"hello","hai");
+    //console.log("output : ",output)
+    output();
+
+}
+console.log("\n\n\n\n")
 {
     //constructors
 
@@ -435,17 +481,39 @@ console.log("\n\n\n\n")
    person2.getmark();
    person1.getmark();
 }
+console.log("\n\n\n\n")
+
+//constructors in classes.
 
 {
-   class person{
-    name;
-    age;
-    mark;
+    class person {
+        name;
+        age;
+        mark;
 
-    constructor(){
-        this.name=name;
-        this.age=age;
-        this.mark=mark;
+        constructor(name,age,mark,job) {
+            this.name = name;
+            this.age = age;
+            this.mark = mark;
+            this.job = job;
+        }
+
+        greeting = function () {
+            console.log(`my name is ${this.name},age is ${this.age},and mark is${this.mark}`)
+        }
     }
-   }
+    
+
+
+    let person1 = new person("henry",22, 100,"developer");
+    console.log("person1 : ", person1);
+
+    person1.greeting()
+
+    
+    
+    person.prototype.getjob=function(){
+        console.log(`my name is ${this.name},age is ${this.age},and mark is${this.mark},and job is ${this.job}`)
+    }
+    person1.getjob()
 }

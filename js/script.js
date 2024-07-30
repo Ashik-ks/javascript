@@ -218,19 +218,157 @@ console.log("\n\n\n")
 //print Names in uppercase
 
 {
-    function people1 (){
-        const people = [
-            {name : 'Alice' ,age : 30, city : 'New York'},
-            {name : 'BOB' ,age : 25, city : 'Los Angeles'},
-            {name : 'Charlie' ,age : 35, city : 'Chicago'},
-            {name : 'David' ,age : 30, city : 'New York'},
-            {name : 'Eve' ,age : 25, city : 'Los Angeles'},
-        ]
-        console.log("people:",people);
-    }
-     
-    people .forEach(items => {
-        console.log("people:",people)
-    });
     
+    const people = [
+        {name : 'Alice' ,age : 30, city : 'New York'},
+        {name : 'BOB' ,age : 25, city : 'Los Angeles'},
+        {name : 'Charlie' ,age : 35, city : 'Chicago'},
+        {name : 'David' ,age : 30, city : 'New York'},
+        {name : 'Eve' ,age : 25, city : 'Los Angeles'},
+    ]
+   
+
+ //task-1
+
+people.forEach(items => {
+let name = items.name;
+console.log("name : ",name.toUpperCase());
+});
+
+console.log("\n")
+
+//task-2
+
+people.forEach(items => {
+    let ages = items.age;
+    console.log(items.name + " :" ,ages+5);
+    });
+
+
+console.log("\n")
+
+//task-3
+
+people.forEach(items => {
+    let city = items.city;
+    console.log( "Cities :" ,city);
+    });
+
+    console.log("\n")
+
+//task-4
+
+let young = people.find(items=>{
+    return items.age <= 25
+})
+console.log("young : ",young);
+
+console.log("\n")
+
+//task-5
+
+let name7 = people.find(items=>{
+    return items.name == "Charlie"
+})
+console.log("name : ",name7);
+
+console.log("\n")
+
+//task-6
+
+let city = people.find(items=>{
+    return items.city == "Chicago"
+})
+console.log("name : ",city);
+
+console.log("\n")
+
+//task-7
+
+let older = people.filter(items=>{
+    return items.age >= 30;
+})
+console.log("name : ",older);
+
+
+console.log("\n")
+
+//task-8
+
+let city1 = people.filter(items=>{
+    return items.city == "New York";
+})
+console.log("name : ",city1);
+
+console.log("\n")
+
+//task-9
+
+let name1 = people.filter(items=>{
+     let name2=items.name;
+     return name2.length >=4;
+     
+})
+console.log("name : ",name1);
+
+console.log("\n")
+
+//task-9
+
+let mapname = people.map(items=>{
+    return items.age
+})
+console.log("name : ",mapname);
+
+console.log("\n")
+
+// task-10
+
+// let mapdescription = people.map(items=>{
+ 
+// })
+
+// console.log("my name is :" + items.name  + "  my age is :" + items.age)
 }
+
+
+console.log("\n\n\n\n")
+
+    //constructors example
+
+    {
+        function animal(name,weight,height){
+            this.name=name;
+            this.weight=weight;
+            this.height=height;
+    
+            this.measure=function(){
+                console.log(`${this.name} weight is ${this.weight},and height ${this.height}`)
+            }
+    
+        }
+        let animal1 = new animal("lion","175 cm","100kg")
+        console.log("animal1:",animal1)
+        animal1.measure()
+    } 
+    {
+        class animal{
+            name;
+            weight;
+            height;
+
+            constructor(name,weight,height){
+            this.name=name
+            this.weight=weight
+            this.height=height
+            }
+
+            measure=function(){
+                console.log(`${this.name} weight is ${this.weight},and height ${this.height}`)
+            }
+        }
+        let animal1=new animal("tiger","160cm","180kg")
+        console.log("animal1 : ",animal1)
+        animal1.measure()
+        
+    }
