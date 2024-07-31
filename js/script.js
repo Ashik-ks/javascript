@@ -337,10 +337,11 @@ console.log("\n\n\n\n")
     //constructors example
 
     {
-        function animal(name,weight,height){
+        function animal(name,weight,height,colour){
             this.name=name;
             this.weight=weight;
             this.height=height;
+            this.colour = colour;
     
             this.measure=function(){
                 console.log(`${this.name} weight is ${this.weight},and height ${this.height}`)
@@ -350,17 +351,32 @@ console.log("\n\n\n\n")
         let animal1 = new animal("lion","175 cm","100kg")
         console.log("animal1:",animal1)
         animal1.measure()
+
+
+        let animal2  = new animal("horse","100kg","155cm","black");
+
+        animal.prototype.colours = function (){
+            console.log(`${this.name} weight is ${this.weight},and height ${this.height},and colour is ${this.colour}`)
+        }
+        animal2.colours();
     } 
+
+
+console.log("\n\n\n")
+
+
     {
         class animal{
             name;
             weight;
             height;
+            colour;
 
-            constructor(name,weight,height){
+            constructor(name,weight,height,colour){
             this.name=name
             this.weight=weight
             this.height=height
+            this.colour=colour
             }
 
             measure=function(){
@@ -370,5 +386,12 @@ console.log("\n\n\n\n")
         let animal1=new animal("tiger","160cm","180kg")
         console.log("animal1 : ",animal1)
         animal1.measure()
+
+        let animal2  = new animal("horse","100kg","155cm","white");
+
+        animal.prototype.colours = function (){
+            console.log(`${this.name} weight is ${this.weight},and height ${this.height},and colour is ${this.colour}`)
+        }
+        animal2.colours();
         
     }

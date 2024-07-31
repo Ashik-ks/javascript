@@ -517,3 +517,82 @@ console.log("\n\n\n\n")
     }
     person1.getjob()
 }
+
+
+console.log("\n\n\n")
+
+{
+    class animal {
+        name;
+
+        constructor(name){
+            this.name = name
+        }
+
+        display (){
+            console.log(`${this.name} is walking`)
+        }
+    }
+     let animal1 = new animal("tomy")
+     animal1.display()
+
+    //Inheritance
+     class dog extends animal{
+        colour;
+
+        constructor(name,colour){
+            super(name);// call parent constructor
+            this.colour=colour;
+        }
+        //maethod overriding
+        display=function(){
+            console.log(`${this.name} is running,and ${this.colour} is its colour`)
+        }
+     }
+     let dog1 = new dog("bella","white")
+     console.log(dog1)
+     dog1.display()
+
+    
+}
+
+console.log("\n\n\n")
+
+{
+    class car {
+        name;
+        colour;
+
+        constructor (name){
+            this.name = name;
+        }
+        info (){
+            console.log(`${this.name} is moving,${this.color}`)
+        }
+
+        // setColour(colour){
+        //     this.colour=colour
+           
+        // }
+        // getColour(colour){
+        //     this.colour = colour
+        //     console.log(`${this.name} is moving,${this.colour}`)
+        // }
+
+        set Color(color){
+            this.color=color
+        }
+
+        get Color(){
+            return this.color
+        }
+     
+    }
+    let car1 = new car ("BMW")
+    console.log(car1)
+    car1.info()
+    //car1.getColour("white")
+    car1.color = "blue"
+    console.log(car1.color)
+    car1.info()
+}
