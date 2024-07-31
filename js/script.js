@@ -395,3 +395,49 @@ console.log("\n\n\n")
         animal2.colours();
         
     }
+
+    console.log("\n\n\n\n")
+
+    {
+        class animal{
+            name;
+            color;
+
+            constructor(name,color){
+                this.name=name;
+                this.color=color;
+            }
+            set Height(height){
+                this.height=height;
+            }
+            get Height(){
+                return this.height;
+            }
+
+            display (){
+                console.log(`${this.name} is ${this.color} in colour`)
+            }
+        }
+        //let animal1 = new animal("horse","black")
+
+        //animal1.display()
+
+        class dog extends animal{
+            price;
+            
+            constructor(name,color,price){
+                super(name,color);
+                this.price = price;
+            }
+
+            display (){
+                console.log(`${this.name} is ${this.color} in colour and it cost ${this.price},and height ${this.height}`)
+            }
+           
+
+        }
+        let dog1 = new dog ("horse","white","$500");
+         console.log(dog1)
+         dog1.height="175 cm"
+         dog1.display()
+    }
