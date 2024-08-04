@@ -162,6 +162,31 @@ console.log("\n\n\n")
 
 console.log("\n\n\n")
 
+
+//armstrong number
+
+{
+    let num = '376';
+    let arr1 = num.split('');
+    let sum =0;
+
+    function armstrong (num){
+        for (i=0;i<=arr1.length-1;i++){
+            let fib = arr1[i]*arr1[i]*arr1[i];
+            sum = sum + fib;
+       
+        }
+        if(sum == num){
+            console.log("number is armstrong:",sum)
+        }else{
+            console.log("number is not armstrong:",sum)
+        }
+    }
+    
+}armstrong(376)
+
+console.log("\n\n\n")
+
 //task 1
 
 function max()
@@ -441,3 +466,64 @@ console.log("\n\n\n")
          dog1.height="175 cm"
          dog1.display()
     }
+
+console.log("\n\n\n")
+
+{
+    class paragragh {
+        para;
+
+        constructor (content){
+            this.para= document.createElement('paragraph');
+            this.para.innerHTML = content;
+            document.body.appendChild(this.para);
+           
+
+        }
+        mouseover(fn){
+            this.para.onmouseover = fn;
+            
+        }
+    }
+    let paragraph1 = new paragragh("JavaScript is a dynamic programming language that's used for web development, in web applications, for game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS");
+    console.log ("paragragh : ",paragraph1);
+    paragraph1.mouseover(function(){
+        console.log("mouse over")
+        
+    },);
+
+    class secondparagragh extends paragragh {
+        constructor (content){
+            super(content)
+            this.para.style.background = "red";
+            this.para.style.color = "white";
+            this.para.style.fontSize = "x-large"
+        }
+        
+        mouseover(fn){
+            this.para.onmouseover = function(){
+                fn()
+            }.bind(this)
+            
+        }
+    }
+    console.log("\n\n\n")
+    let secondparagraghobj = new secondparagragh("It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS")
+    console.log(secondparagraghobj);
+    
+    secondparagraghobj.mouseover(function(){
+        console.log("mouse over performed")
+    })
+
+    
+   
+}
+
+console.log("\n\n\n\n\n")
+
+
+{
+    
+    
+    
+}
