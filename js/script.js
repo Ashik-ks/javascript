@@ -497,11 +497,25 @@ console.log("\n\n\n")
             super(content)
             this.para.style.background = "red";
             this.para.style.color = "white";
-            this.para.style.fontSize = "x-large"
+            
         }
         
         mouseover(fn){
             this.para.onmouseover = function(){
+                this.para.style.fontSize = "x-large"
+                this.para.style.background = "red";
+            this.para.style.color = "white";
+                fn()
+            }.bind(this)
+            
+        }
+        mouseover1(fn){
+            this.para.onmouseout = function(){
+                // this.para.style.background = "white";
+                // this.para.style.color = "black";
+                this.para.style.fontSize = "small";
+                this.para.style.background = "white";
+            this.para.style.color = "black";
                 fn()
             }.bind(this)
             
@@ -512,6 +526,9 @@ console.log("\n\n\n")
     console.log(secondparagraghobj);
     
     secondparagraghobj.mouseover(function(){
+        console.log("mouse over performed")
+    })
+    secondparagraghobj.mouseover1(function(){
         console.log("mouse over performed")
     })
 

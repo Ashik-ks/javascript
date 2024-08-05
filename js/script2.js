@@ -662,3 +662,17 @@ console.log("\n\n\n\n\n");
         console.log("blackbutton clicked")
     })
 }
+
+
+console.log ("\n\n\n\n")
+
+{
+    console.log("first line ...")
+
+    // setters, event Listeners, fetch api's they are asychronous operations they will execute after the synchronous operations.the asynchronous operations are stored in callback queue and sends to call stack using the event loop and it goes to javascript engine for the execution.
+    setTimeout(()=>{
+        console.log ("second line...")
+    })
+
+    console.log("third line...")
+}
