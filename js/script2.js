@@ -667,12 +667,46 @@ console.log("\n\n\n\n\n");
 console.log ("\n\n\n\n")
 
 {
-    console.log("first line ...")
+    //console.log("first line ...")
 
     // setters, event Listeners, fetch api's they are asychronous operations they will execute after the synchronous operations.the asynchronous operations are stored in callback queue and sends to call stack using the event loop and it goes to javascript engine for the execution.
-    setTimeout(()=>{
-        console.log ("second line...")
-    })
+    // setTimeout(()=>{
+    //     console.log ("second line...")
+    // })
 
-    console.log("third line...")
+    //console.log("third line...")
+
+    //Asynchronous
+    // call stack
+    // event loop
+    // callback queue
+    // macrotask queue
+
+}
+{
+    let xhr = new XMLHttpRequest();
+    console.log("xhr : ",xhr);
+
+    xhr.open('get','https://jsonplaceholder.typicode.com/users');
+
+    document.getElementById('btns').addEventListener('click',function () {
+        xhr.send();
+    })
+    xhr.onreadystatechange = function  () {
+        console.log ("readystate : ", xhr.readystate);
+
+        if(xhr.readystate===4){
+            console.log (xhr.status);
+            if(xhr.response===200){
+                let response = xhr.response;
+                console.log (response)
+                console.log("type of response : ".typeof(response))
+
+
+                let datas = JSON.parse(response)
+                console.log(datas);
+
+            }
+        }
+    }
 }
