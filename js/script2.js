@@ -683,28 +683,50 @@ console.log ("\n\n\n\n")
     // macrotask queue
 
 }
+
+
+
 {
     let xhr = new XMLHttpRequest();
-    console.log("xhr : ",xhr);
+    console.log("xhr : ", xhr);
 
-    xhr.open('get','https://jsonplaceholder.typicode.com/users');
+    xhr.open('get', 'https://jsonplaceholder.typicode.com/users');
 
-    document.getElementById('btns').addEventListener('click',function () {
-        xhr.send();
-    })
-    xhr.onreadystatechange = function  () {
-        console.log ("readystate : ", xhr.readystate);
+    document.getElementById('btn1').onclick = function () {
+        xhr.send()
+    }
 
-        if(xhr.readystate===4){
-            console.log (xhr.status);
-            if(xhr.response===200){
+    xhr.onreadystatechange = function () {
+        console.log("readystate : ", xhr.readyState);
+
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            if (xhr.status === 200) {
+
                 let response = xhr.response;
-                console.log (response)
-                console.log("type of response : ".typeof(response))
+                console.log("response : ", response)
+                console.log("type of response : ", typeof (response))
 
 
                 let datas = JSON.parse(response)
-                console.log(datas);
+                console.log("datas : ", datas);
+
+                let Datacontainer = document.getElementById('datacontainer');
+                console.log("Datacontainer : ", Datacontainer);
+
+                let rows = '';
+                for (let i = 0; i < datas.length; i++) {
+                    rows = rows + `
+                        <tr>
+                        <td>${datas[i].name}</td>
+                        <td>${datas[i].username}</td>
+                        <td>${datas[i].email}</td>
+                        <td>${datas[i].website}</td>
+                    `
+                }
+
+                console.log(rows)
+                Datacontainer.innerHTML = rows;
 
             }
         }
