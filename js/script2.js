@@ -732,3 +732,14 @@ console.log ("\n\n\n\n")
         }
     }
 }
+
+{
+    let arr = ["violet","indigo","blue","green","yellow","orange","red"];
+    count = 0;
+    let BTN = document.getElementById("btnid").onclick = function (){
+        console.log("btn clicked")
+         
+        document.body.style.background = arr[count];
+        count = (count + 1) % arr.length;
+    }
+}
