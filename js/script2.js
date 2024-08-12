@@ -717,12 +717,15 @@ console.log ("\n\n\n\n")
                 let rows = '';
                 for (let i = 0; i < datas.length; i++) {
                     rows = rows + `
+
                         <tr>
                         <td>${datas[i].name}</td>
                         <td>${datas[i].username}</td>
                         <td>${datas[i].email}</td>
                         <td>${datas[i].website}</td>
-                    `
+                        <td><button onclick ="handleclick(${datas[i].id})">view</button> </td>
+                        </tr>
+                     `
                 }
 
                 console.log(rows)
@@ -730,6 +733,15 @@ console.log ("\n\n\n\n")
 
             }
         }
+    }
+    function handleclick(id){
+        console.log("reached here ....");
+        console.log ("id : ",id)
+        window.location.href = "dashboard.html"
+    }
+
+    function loadUserData(){
+        console.log ("")
     }
 }
 
