@@ -745,3 +745,105 @@ console.log ("\n\n\n\n")
     }
 }
 
+{
+    const str1 = "the cat is running"
+    const str2 = "rat eat cheese"
+    const str3 = `dog eats
+    meat and 
+    it barkes`
+
+
+    const regexp1 = /a/;
+    const result1 = regexp1.test (str1); //check if str 1 contains letter a
+    console.log ("result1 : ",result1); //true
+
+    const regexp2 = /A/i;
+    const result2 = regexp2.test(str1); // check if str 1 contains letter a and performs case in-sensitive search
+    console.log("result2 : ",result2); // true 
+
+    const regexp3 = /ab/
+    const result3 = regexp3.test(str1); // check if str 1 contains ab
+    console.log("result3 : ",result3); //false
+
+    const regexp4 = /[crb]a/i
+    const result4 = regexp4.test(str1); // check str 1 contains c,r,b before a  
+    console.log("result4 : ",result4); // true
+
+    const regexp5 = /[a-z]a/
+    const result5 = regexp5.test(str1); // check if a-z letters before str 1 contains a 
+    console.log("result5 : ",result5); //true 
+
+    const regexp6 = /[a-z0-9]a/
+    const result6 = regexp6.test(str1); // check if a-z and 0-9 letters before str 1 contains a 
+    console.log("result6 : ",result6); //true
+
+    const regexp7 = /^rat/i ; 
+    const result7 = regexp7.test(str2); // check if str2 starts with 'rat'
+    console.log("result7 : ",result7) ; //true
+
+    const regexp8 = /cheese$/i ; 
+    const result8 = regexp8.test(str2); // check if str2 ends with 'cheese'
+    console.log("result8 : ",result8) ; //true
+
+    const regexp9 = /^dog/im ; // /m-flag represents multiline matching
+    const result9 = regexp9.test(str3); // check if str3 starts with 'dog'
+    console.log("result9 : ",result9) ; //true
+
+    const regexp10 = /barkes$/im ; // /m-flag represents multiline matching
+    const result10 = regexp10.test(str3); // check if str3 ends with 'barkes'
+    console.log("result10 : ",result10) ; //true
+
+    const regexp11 = /barkes?/im ; // word or character before '?' is optional for  matching
+    const result11 = regexp11.test(str3); // it matches both bark and barkes 's' is optional
+    console.log("result11 : ",result11) ; //true
+
+    const regexp12 = /bark(es)?/im ; // word or character before '?' is optional for  matching
+    const result12 = regexp12.test(str3); // it matches both bark and barkes 'es' is optional
+    console.log("result12 : ",result12) ; //true
+
+    const regexp13 = /barkes*$/i ; // the letter before '*' can occur multiple times in a string
+    const result13 = regexp13.test(str3); // it matches both bark and barkes , barkess , barkessss...
+    console.log("result13 : ",result13) ; //true
+
+    const regexp14 = /barkes+$/i ; // the letter before '+' can occur multiple times in a string, but atleat 1 occurence is needed
+    const result14 = regexp14.test(str3); // it matches barkes ,barkess ....
+    console.log("result14 : ",result14) ; //true
+
+    const regexp15 = /barke.$/i ; // any charecter can occur after '.' represent any type of character
+    const result15 = regexp15.test(str3); // it matches barkes ,barkess ,barkesd,barkejdhfjd but not match barke
+    console.log("result15 : ",result15) ; //true
+
+    const regexp16 = /barke.*$/i ; 
+    const result16 = regexp16.test(str3); // it matches barkes ,barkess ,barkesss since due to '*' munltiple charecters are matched.  
+    console.log("result16 : ",result16) ; //true
+
+
+     const str4 = "Hello"
+
+
+     const regexp17 = /[kjm]/i
+     const result17 =regexp17.test(str4); // if there is k,j,m it will be true
+     console.log("result17 : ",result17); // false
+
+     const regexp18 = /[^kjm]/i
+     const result18 =regexp18.test(str4); // if there is no k,j,m it will be true
+     console.log("result18 : ",result18); // true
+
+     const regexp19 = /[H+]/i
+     const result19 =regexp19.test(str4); // atleast one 'H' it will be true
+     console.log("result19 : ",result19); // true
+
+     const regexp20 = /o$/i
+     const result20 =regexp20.test(str4); // string ends with o
+     console.log("result20 : ",result20); // true
+
+     const regexp21 = /o?$/i
+     const result21 =regexp21.test(str4); // 'o' in string ending is optional
+     console.log("result21 : ",result21); // true
+
+     const regexp22 = /o+$/i
+     const result22 =regexp22.test(str4); // atleast one  'o' is needed in the string  ending
+     console.log("result22 : ",result22); // true
+
+     
+}
