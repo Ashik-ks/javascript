@@ -845,5 +845,73 @@ console.log ("\n\n\n\n")
      const result22 =regexp22.test(str4); // atleast one  'o' is needed in the string  ending
      console.log("result22 : ",result22); // true
 
+
+    //{} indicates the number of characters, a{2} means aa ,ie 2a is required
+
+    // const str4 = "Hello"
+
+     const regexp23 = /L{2}o$/i // 'o' should be exactly after 2 i's
+     const result23 = regexp23.test(str4);
+     console.log("result23 : ",result23); //true
+
+     const regexp24 = /L{2,4}o$/i // 'o' should be exactly after between 2-4 L's
+     const result24 = regexp24.test(str4);
+     console.log("result24 : ",result24); //true
+
+     const regexp25 = /HeL{2,4}o$/i // 'o' should be exactly after 'He' and between 2-4 L's and 'o' is required
+     const result25 = regexp25.test(str4);
+     console.log("result25 : ",result25); //true
+
+     const regexp26 = /HeL{2,}o$/i // 'o' should be exactly after 'He' and between 2 or more L's  required
+     const result26 = regexp26.test(str4);
+     console.log("result26 : ",result26); //true
+
+    // indicates escape characters ,used for matching any characters which has special meaning
+
+     const regexp27 = /\d/i // if there is any digit  it will be true, else it will bw false
+     const result27 = regexp27.test(str4);
+     console.log("result27 : ",result27); //false
+
+     const regexp28 = /D/i // if there is any non-digits it will be true, else it will be false
+     const result28 = regexp28.test(str4);
+     console.log("result28 : ",result28); //false
+
+     const regexp29 = /./i // if ther is a '.' or anything it will match
+     const result29 = regexp29.test(str4);
+     console.log("result29 : ",result29); //true
+
+     const regexp30 = /\./i // if there any '.' in the string it will match, else it will false
+     const result30 = regexp30.test(str4);
+     console.log("result30 : ",result30); // false
+
+     // '\'  used to escape special characters
+
+
+     // Date validation
+
+     const regexpdate1 = /^\d{1,2}-\d{1,2}-\d{4}$/i; // string should start with 1 or 2 digit and after it '-' symbol then again 1 or 2 digits, after '-', ending digit should be 4
      
+  
+     let datebox = document.getElementById("btnn").onclick = function (){
+         let input = document.getElementById('datebox').value
+         console.log(input)
+     
+         let resultt = regexpdate1.test(input);
+         console.log(resultt)
+         if(resultt === true){
+             let x = document.getElementById('output')
+             x.innerHTML = "set"
+             console.log(x)
+         } else{
+             let x = document.getElementById('output')
+             x.innerHTML= "Enter valid string"
+             x.style.color = "red"
+         }
+     
+     }
+
+
+     const regexpdate2 = /^([012]?\d|3[01])-([0]\d)/
+
 }
+
