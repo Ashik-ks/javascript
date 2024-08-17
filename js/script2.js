@@ -911,7 +911,36 @@ console.log ("\n\n\n\n")
      }
 
 
-     const regexpdate2 = /^([012]?\d|3[01])-([0]\d)/
+     const regexpdate2 = /^([012]?\d|3[01])-([0]\d)|[1][012])-(\d{4}$)$/i // in the first group if first character is 0 or 1 or 2 then the second character can be any digits (0-9) or if the charater 
+ 
 
+    // '^' and '$' can only be used start or end of a string and coannot be used in between a string to match ,so we use lookaheads for giving starting and ending between  strings
+
+    //(?=) - positive lookahead, A(?=) => matches : A only if A is followed by B
+    //(?!) - negative lookahead, A(?!) => matches : A only if A is not  followed by B
+    //(?<=) - positive lookahead, A(?<=) => matches : A only if A is preceded by B
+    //(?<!) - positive lookahead, A(?<!) => matches : A only if A is not preceded by B
+
+    let datestring = '19-12-2003';
+
+    let regex = /-\d+-/; //it will match also '-0-' in result and gives as result array
+     const result = datestring.match(regex);
+     console.log("result : ",result);
+
+     //inorder to match exactly '12' in datestring we can use lookaheads
+
+     let regex1 = /(?<=-)\d(?=-)/; //htis will exactly match '12' in string
+     const resultt1 = datestring.match(regex1);
+     console.log("result1 : ",resultt1);
+
+     //example for negative lookkahead and negative lookbehind 
+     let phone = "(91)1234567890"
+
+     //to match numbers outside of (91)
+
+     const phoneregex = /(?<!\()\d+(?!\))/;
+     const phoneregexresult = phone.match(phoneregex)
+     console.log("phoneregexresult : ",phoneregexresult)
 }
 
++
