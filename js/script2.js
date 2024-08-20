@@ -911,7 +911,7 @@ console.log ("\n\n\n\n")
      }
 
 
-     const regexpdate2 = /^([012]?\d|3[01])-([0]\d)|[1][012])-(\d{4}$)$/i // in the first group if first character is 0 or 1 or 2 then the second character can be any digits (0-9) or if the charater 
+    //  const regexpdate2 = /^([012]?\d|3[01])-([0]\d)|[1][012])-(\d{4}$)$/i // in the first group if first character is 0 or 1 or 2 then the second character can be any digits (0-9) or if the charater 
  
 
     // '^' and '$' can only be used start or end of a string and coannot be used in between a string to match ,so we use lookaheads for giving starting and ending between  strings
@@ -943,4 +943,95 @@ console.log ("\n\n\n\n")
      console.log("phoneregexresult : ",phoneregexresult)
 }
 
-+
+
+{
+    let datas = [
+        {
+            id : 1,
+            name : "john",
+            age : 12,
+        },
+        {
+            id : 2,
+            name : "jane",
+            age : 8,
+        }
+    ];
+
+    console.log("datas : ",datas);
+
+    function finduser(id){
+        let user = datas.find(data => data.id === id);
+        return user
+    }
+     let user = finduser(1);
+     console.log("user :",user);
+
+     function finduser1(id){
+        let user = datas.find(data => data.id === id);
+
+        setTimeout(() => {
+            return user;
+        }, 1000);
+     }
+
+     let user1 = finduser1(2);
+     console.log("user1 :",user1);
+
+     function finduser2(id){
+        return new Promise ((resolve, reject)=> {
+            let user = datas.find(data => data.id ===id);
+
+            setTimeout(()=>{
+                if(user){
+                    resolve(user);
+                }else{
+                    reject("user not found");
+                }
+            },1000)
+        })
+     }
+
+     finduser2(2)
+     .then((user) =>{
+         console.log("user2 :",user)
+         
+     })
+     .catch((message) =>{
+        console.log("message : ",message);
+    });
+
+
+     // promise chaining 
+      finduser2(2)
+        .then((user) =>{
+            console.log("user2 :",user)
+            return "hello"
+        })
+        .then((value)=>{
+            console.log("userr:",value)
+            return value + "hai";
+        })
+        .then((value)=>{
+            console.log("userr:",value)
+           
+        })
+        .catch((message) =>{
+            console.log("message : ",message);
+        });
+
+        // async function finduser2(id){
+        //     return new Promise ((resolve, reject)=> {
+        //         let user = datas.find(data => data.id ===id);
+    
+        //         setTimeout(()=>{
+        //             if(user){
+        //                 resolve(user);
+        //             }else{
+        //                 reject("user not found");
+        //             }
+        //         },1000)
+        //     })
+        // }
+
+}
